@@ -1,0 +1,16 @@
+{
+  "name": "projectx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "open": "sudo npx cypress open",
+    "run": "sudo npx cypress run --headed"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.3.2",
+    "cypress-file-upload": "^5.0.8"
+  }
+}
