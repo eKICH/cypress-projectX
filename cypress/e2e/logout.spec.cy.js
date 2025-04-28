@@ -6,18 +6,14 @@ describe("Logout Test Suite", () => {
 
     beforeEach("Logi Page", () => {
         cy.loginPage()
-    })
 
-    it("Logout Logged In User", () => {
-        // Assert user is on the login screen
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        
-        // Enter Creds and click log in
-        loginPage.loginToApp(data.login.correct.username, data.login.correct.password)
-        
+        cy.login(data.login.correct.username, data.login.correct.password)
+    })
 
+    it("Logout Logged In User", () => {
         // Assert daashboard URL and Dashboard Text 
         dashboard.assertDashboardUrl()
         dashboard.dashboardText()
