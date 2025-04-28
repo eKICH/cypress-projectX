@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "open": "sudo npx cypress open",
-    "run": "sudo npx cypress run --headed"
+    "test": "cypress run"
   },
   "author": "",
   "license": "ISC",
