@@ -51,13 +51,17 @@ jobs:
       - name: Verify Cypress
         run: npx cypress verify
 
-      # Set up Chrome
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
+      # Install Chrome (if it's not working with browser-actions)
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
-      # Set up Firefox
-      - name: Set up Firefox
-        uses: browser-actions/setup-firefox@v1
+      # Install Firefox (if it's not working with browser-actions)
+      - name: Install Firefox
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y firefox
 
       - name: Run Cypress tests(Electron)
         run: npm run test --browser electron
