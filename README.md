@@ -4,9 +4,9 @@ This project contains end-to-end (E2E) tests written in **JavaScript** using [Cy
 
 ## 📦 Installation
 
-First, clone the repository and install dependencies:
+# First, clone the repository and install dependencies:
 
-git clone <your-repo-url>
+git clone https://github.com/eKICH/cypress-projectX.git
 cd <your-project-folder>
 npm install
 
