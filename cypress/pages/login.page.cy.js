@@ -1,4 +1,4 @@
-import dashboardPage from '../pages/dashboard.page.cy'
+
 class LoginPage {
 
     // Get Element username
@@ -42,13 +42,6 @@ class LoginPage {
 
     assertInvalidCredsText(){
         this.invalidCredentials.should("be.visible");
-    }
-
-    loginToApp(username, password) {
-        this.username.type(username)
-        this.password.type(password)
-        this.loginBtn.click()
-        return dashboardPage
     }
 
 } export default new LoginPage()

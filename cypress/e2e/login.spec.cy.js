@@ -13,7 +13,7 @@ describe("Login Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.correct.username, testData.login.correct.password)
+        cy.login(testData.login.correct.username, testData.login.correct.password)
         dashboard.dashboardText()
     });
 
@@ -22,7 +22,7 @@ describe("Login Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.wrongpass.username, testData.login.wrongpass.password)
+        cy.login(testData.login.wrongpass.username, testData.login.wrongpass.password)
         loginPage.assertInvalidCredsText()
     });
 
@@ -31,7 +31,7 @@ describe("Login Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.wrongusername.username, testData.login.wrongusername.password)
+        cy.login(testData.login.wrongusername.username, testData.login.wrongusername.password)
         loginPage.assertInvalidCredsText()
     });
 
@@ -40,7 +40,7 @@ describe("Login Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.wrongusernamepassword.username, testData.login.wrongusernamepassword.password)
+        cy.login(testData.login.wrongusernamepassword.username, testData.login.wrongusernamepassword.password)
         loginPage.assertInvalidCredsText()
     });
 
@@ -49,7 +49,7 @@ describe("Login Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.usingEmail.username, testData.login.usingEmail.password)
+        cy.login(testData.login.usingEmail.username, testData.login.usingEmail.password)
         loginPage.assertInvalidCredsText()
     });
 
@@ -58,7 +58,7 @@ describe("Login Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.usingPhoneNo.username, testData.login.usingPhoneNo.password)
+        cy.login(testData.login.usingPhoneNo.username, testData.login.usingPhoneNo.password)
         loginPage.assertInvalidCredsText()
     });
 
@@ -68,7 +68,7 @@ describe("Login Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.usingTextNo.username, testData.login.usingTextNo.password)
+        cy.login(testData.login.usingTextNo.username, testData.login.usingTextNo.password)
         loginPage.assertInvalidCredsText()
     });
 

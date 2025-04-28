@@ -7,14 +7,15 @@ describe("Add Employee Suite", () => {
 
     beforeEach("Login Page", () => {
         cy.loginPage()
-    })
-
-    it("Add Employee", () => {
 
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        loginPage.loginToApp(testData.login.correct.username, testData.login.correct.password)
+        cy.login(testData.login.correct.username, testData.login.correct.password)
+    })
+
+    it("Add Employee", () => {
+
         dashboard.clickPIM()
         dashboard.linkClass.should("have.class", "active")
 
