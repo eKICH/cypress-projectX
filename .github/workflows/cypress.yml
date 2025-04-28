@@ -21,8 +21,32 @@ jobs:
         with:
           node-version: '18'
 
+      # ADD CACHE FOR NODE_MODULES
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # ADD CACHE FOR CYPRESS BINARY
+      - name: Cache Cypress binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-
+
       - name: Install dependencies
         run: npm install
+
+      # VERIFY CYPRESS (OPTIONAL but recommended)
+      - name: Verify Cypress
+        run: npx cypress verify
 
       - name: Run Cypress tests
         run: npm run test
