@@ -60,16 +60,15 @@ jobs:
       # Install Firefox (if it's not working with browser-actions)
       - name: Set up Firefox
         uses: browser-actions/setup-firefox@v1
-
+      
+      - name: Run Cypress tests(Firefox)
+        run: npx cypress run --browser "firefox"
       - name: Run Cypress tests(Electron)
         run: npm run test --browser electron
 
       - name: Run Cypress tests (Chrome)
         run: npx cypress run --browser chrome
       
-      - name: Run Cypress tests(Firefox)
-        run: npx cypress run --browser "firefox"
-
       - name: Upload screenshots if tests failed
         if: failure()
         uses: actions/upload-artifact@v4
