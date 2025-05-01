@@ -1,6 +1,6 @@
-# 🧪 Cypress E2E ProjectX
+# 🧪 OrangeHRM E2E ProjectX
 
-This project contains end-to-end (E2E) tests written in **JavaScript** using [Cypress](https://www.cypress.io/).
+This project contains end-to-end (E2E) tests written in **TypeScript** using [Cypress](https://www.cypress.io/).
 
 ## 📦 Installation
 
