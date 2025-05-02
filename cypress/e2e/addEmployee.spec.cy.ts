@@ -1,7 +1,7 @@
 import loginPage from '../pages/login.page.cy'
 import dashboard from '../pages/dashboard.page.cy'
 import addEmployee from '../pages/addEmployee.page.cy'
-import testData from '../fixtures/testdata'
+import {testData} from '../fixtures/testdata'
 
 describe("Add Employee Suite", () => {
 
@@ -22,6 +22,8 @@ describe("Add Employee Suite", () => {
         addEmployee.assertpimUrl()
         addEmployee.assertpimTitle()
 
+        addEmployee.deleteAll()
+
         addEmployee.clickAddEmployeeMenu()
         addEmployee.assertpimAddEmployeeUrl()
         addEmployee.assertaddemployeeTxt()
@@ -29,5 +31,5 @@ describe("Add Employee Suite", () => {
         addEmployee.saveEmployee(testData.employee.fileName, testData.employee.firstName, testData.employee.middleName, testData.employee.lastName)
         addEmployee.assertSuccessMessage()
         addEmployee.assertPersonalDetailsUrl()
-    })
+    });
 })

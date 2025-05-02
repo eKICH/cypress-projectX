@@ -1,4 +1,6 @@
-const testData = {
+import helper from '../utility/helper'
+
+export const testData = {
     login: {
         correct: {
             username: "admin",
@@ -47,6 +49,6 @@ const testData = {
         firstName: "Employee",
         middleName: "Best",
         lastName: "Performer",
+        empId: helper.randomEmpID(),
     }
 }; 
-module.exports = testData;

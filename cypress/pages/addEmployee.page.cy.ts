@@ -5,6 +5,18 @@ class AddEmployee {
         return cy.get("nav[role='navigation'] li a").contains(/Add Employee/i)
     }
 
+    get checkAll() {
+        return cy.get('.oxd-checkbox-wrapper input[type="checkbox"]');
+    }
+
+    get deleteBtn() {
+        return cy.get('button.oxd-button--label-danger').contains('Delete Selected');
+    }
+
+    get yesDelete() {
+        return cy.get('button.oxd-button--label-danger').contains('Yes, Delete')
+    }
+
     get imageUpload(){
         return cy.get("input[type=file]")
     }
@@ -19,6 +31,10 @@ class AddEmployee {
 
     get lName(){
         return cy.get("input[name=lastName]")
+    }
+
+    get empId() {
+        return cy.get('input.oxd-input');
     }
 
     get loginDetailsToggle(){
@@ -55,6 +71,12 @@ class AddEmployee {
 
    assertPersonalDetailsUrl() {
     cy.url().should("include", "viewPersonalDetails")
+   }
+
+   deleteAll() {
+    this.checkAll.eq(0).check({force: true})
+    this.deleteBtn.click()
+    this.yesDelete.click()
    }
 
    clickAddEmployeeMenu(){
