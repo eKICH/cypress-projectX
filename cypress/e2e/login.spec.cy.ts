@@ -1,6 +1,6 @@
 import loginPage from '../pages/login.page.cy'
 import dashboard from '../pages/dashboard.page.cy'
-import testData from '../fixtures/testdata'
+import { testData } from '../fixtures/testdata'
 
 beforeEach("Logi Page", () => {
     cy.loginPage()

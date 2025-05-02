@@ -1,6 +1,6 @@
 import loginPage from '../pages/login.page.cy'
 import dashboard from '../pages/dashboard.page.cy'
-import data from '../fixtures/testdata'
+import { testData }  from '../fixtures/testdata'
 
 describe("Logout Test Suite", () => {
 
@@ -10,7 +10,7 @@ describe("Logout Test Suite", () => {
         loginPage.assertLoginUrl()
         loginPage.assertLoginText()
 
-        cy.login(data.login.correct.username, data.login.correct.password)
+        cy.login(testData.login.correct.username, testData.login.correct.password)
     })
 
     it("Logout Logged In User", () => {
